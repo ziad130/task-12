@@ -1,0 +1,35 @@
+<section class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Welcome to BookStore</h1>
+        <p class="hero-subtitle">Discover your next favorite book from our vast collection</p>
+        <p class="hero-description">
+          Explore thousands of books across various genres. From bestsellers to hidden gems, 
+          find the perfect read for every mood and moment.
+        </p>
+        <div class="hero-buttons">
+          <a routerLink="/books" class="btn btn-primary">Browse All Books</a>
+          <a routerLink="/about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+      
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=600&h=400&fit=crop" alt="Book Store" class="hero-img">
+      </div>
+    </div>
+    
+    <div class="featured-books">
+      <h2>Featured Books</h2>
+      <div class="books-grid">
+        <div class="book-card" *ngFor="let book of featuredBooks">
+          <img [src]="book.image" [alt]="book.title" class="book-image">
+          <h3>{{ book.title }}</h3>
+          <p class="author">by {{ book.author }}</p>
+          <p class="price">{{ book.price }}</p>
+          <button class="btn btn-primary">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

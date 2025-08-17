@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="logo">
+        <a routerLink="/">
+          <h1>BookStore</h1>
+        </a>
+      </div>
+      
+      <nav class="nav-menu">
+        <ul>
+          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+          <li><a routerLink="/books" routerLinkActive="active">Books</a></li>
+          <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="auth-buttons">
+        <ng-container *ngIf="!isAuthenticated">
+          <a routerLink="/sign-in" class="btn btn-outline">Sign In</a>
+          <a routerLink="/sign-up" class="btn btn-primary">Sign Up</a>
+        </ng-container>
+        
+        <ng-container *ngIf="isAuthenticated">
+          <span class="welcome-text">Welcome, {{ currentUser?.name }}!</span>
+          <button class="btn btn-outline" (click)="logout()">Logout</button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</header>

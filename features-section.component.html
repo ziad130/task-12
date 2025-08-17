@@ -1,0 +1,14 @@
+<section class="features-section">
+  <div class="container">
+    <h2>Why Choose BookStore?</h2>
+    <p class="section-subtitle">We provide the best book shopping experience</p>
+    
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
